@@ -29,7 +29,7 @@ public class AccountDAOImpl implements IAccountDAO{
 		if(aObj.isPresent()){
 			Account acc = aObj.get();
 			acc.setPhoneNumber(phoneNumber);
-			return acc;
+			return accountRepository.save(acc);
 		}else{
 			throw new InvalidAccountException();
 		}
